@@ -10,7 +10,7 @@
 			</div>
 
 			<div class="form-group">
-				<label>Enter the Licence plate: 
+				<label>Enter the Licence plate Number: 
 					<input type="text" name="licencePlateNumber" class="form-control form-control-lg">
 				</label>
 			</div>
@@ -29,3 +29,4 @@
 		}
 	}
 </script>
+

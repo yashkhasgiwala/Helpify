@@ -1,32 +1,22 @@
 <template>
   <div class="vue-tempalte">
-    <!-- Navigation -->
-    <nav class="navbar shadow bg-white rounded justify-content-between flex-nowrap flex-row fixed-top">
-      <div class="container">
-        <a class="navbar-brand float-left" href="" >
-           Helpify
-        </a>
-        <ul class="nav navbar-nav flex-row float-right">
-			<li class="nav-item">
-				<router-link class="btn btn-danger" to="/report" style="margin-right: 20px;">Emergency Report</router-link>
-			</li>
-
-			<li class="nav-item">
-				<router-link class="nav-link pr-3" to="/login">Sign in</router-link>
-			</li>
-
-			<li class="nav-item">
-				<router-link class="nav-link pr-3" to="/">Register Now!</router-link>
-			</li>
-
-			<li class="nav-item">
-				<router-link class="nav-link pr-3" to="/">Help</router-link>
-			</li>
-
-		  
-        </ul>
-      </div>
-    </nav>
+   <mdb-container>
+    <mdb-navbar  class="mt-2" hamburger navIconClass="icon-color" expand="xl">
+      <mdb-navbar-brand>
+        Helpify
+      </mdb-navbar-brand>
+      <mdb-navbar-toggler>
+        <mdb-navbar-nav right>
+          <mdb-nav-item href="/report" waves-fixed class="report-btn"><h6>Emergency Report</h6></mdb-nav-item>
+          <mdb-nav-item href="/login" waves-fixed>Sign In</mdb-nav-item>
+          <mdb-nav-item href="/" waves-fixed>Register Now!</mdb-nav-item>
+          <mdb-nav-item href="/help" waves-fixed>Help</mdb-nav-item>
+        </mdb-navbar-nav>
+      </mdb-navbar-toggler>
+    </mdb-navbar>
+  
+   
+  </mdb-container>
 
     <!-- Main -->
     <div class="App">
@@ -38,3 +28,25 @@
     </div>
   </div>
 </template>
+<script>
+  import { mdbNavbar, mdbNavItem, mdbNavbarNav, mdbNavbarToggler, mdbContainer, mdbNavbarBrand,} from 'mdbvue';
+  export default {
+    name: 'HamburgerMenuPage',
+    components: {
+      mdbNavbar,
+      mdbNavItem,
+      mdbNavbarNav,
+      mdbNavbarToggler,
+      mdbContainer,
+      mdbNavbarBrand,
+     
+    }
+  }
+</script>
+<style>
+  .icon-color {
+    color: #f2dcbb;
+    
+    
+  }
+</style>

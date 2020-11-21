@@ -1,0 +1,17 @@
+{% extends "base_menu.html" %}
+
+{% block title %}Register{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <form method="POST" class="form-group">
+    	<h3>Sign Up</h3>
+		{% csrf_token %}
+		{{ form|crispy }}
+		<button type="submit" class="btn btn-dark btn-lg btn-block">Sign Up</button>
+		<p class="forgot-password text-right">
+                  Already registered 
+                  <a href="{% url 'login' %}">sign in?</router-link>
+              </p>
+    </form>
+{% endblock %}

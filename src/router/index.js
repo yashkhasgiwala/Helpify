@@ -23,6 +23,11 @@ Vue.use(VueRouter)
     path: '/report',
     name: 'report',
     component: () => import('../components/Report.vue')
+  },
+  {
+    path: '/help',
+    name: 'help',
+    component: () => import('../components/Help.vue')
   }
 ]
 

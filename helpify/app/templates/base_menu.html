@@ -1,0 +1,39 @@
+{% extends 'base_bootstrap.html' %}
+
+{% block navbar %}
+<div class='container'>
+      <nav class="mt-2 navbar navbar-expand-xl">
+        <button  type="button" data-toggle="collapse" data-target="navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler">
+          <span  class="icon-color">
+            <i class="fas fa-bars fa-1x text-"></i></span></button>
+            <div class="">
+              <div class="navbar-brand"> Helpify </div>
+            </div>
+            <nav id="navbarSupportedContent" class="navbar-collapse collapse" style="overflow: initial;">
+              <ul class="navbar-nav ml-auto">
+                <li class="report-btn nav-item ripple-parent">
+                  <a href="{% url 'report' %}" class="nav-link navbar-link"><!----><h6>Emergency Report</h6></a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item ripple-parent">
+                  <a class="nav-link navbar-link" href='{% url "view_profile" %}'>{{user.email}}</a>
+                </li>
+                <li class="nav-item ripple-parent">
+                  <a class="nav-link navbar-link" href="{% url 'logout' %}">Sign Out</a>
+                </li>
+                {% else %}
+                <li class="nav-item ripple-parent">
+                  <a href="{% url 'login' %}" class="nav-link navbar-link"><!---->Sign In</a>
+                </li>
+                  <li class="nav-item ripple-parent">
+                    <a href="{% url 'register' %}" class="nav-link navbar-link"><!---->Register Now!</a>
+                  </li>
+                  <li class="nav-item ripple-parent">
+                    <a href="{% url 'help' %}" class="nav-link navbar-link"><!---->Help</a>
+                  </li>
+                  {% endif %}
+                </ul>
+              </nav>
+      </nav>
+  </div>
+{% endblock %}
