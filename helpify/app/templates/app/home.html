@@ -1,25 +1,137 @@
 {% extends 'base_menu.html' %}
-{% block title %}My Profile{% endblock %}
+{% block title %}Home{% endblock %}
 
-{% block content %}
+{% block head %}
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Texturina:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Goldman:wght@700&display=swap" rel="stylesheet">
+<style>
+/*body, html {*/
+/*  height: 100%;
+}
+.bg {
+	background-image: url("bg.jpg");
+
+	height: 120%;
+
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}*/
+
+      body
+    {
+    height:100vh;
+    color:white;
+    background-color: #222831;
+}
+/*h1{
+    position: relative;
+    top:30vh;
+    left:10vh;
+    border-right: 3px solid #ff6f61;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    display: block;
+    font-size:10vh;
+    font-family:'Lato';
+    margin-left: 30vh;
+}*/
+
+h1
+{
+	margin: 10vh;
+	font-family: 'Texturina', serif;
+	
+}
+
+p
+{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.mybutton
+{
+	margin-top: 5vh;
+
+	margin: 1vh;
+}
+
+button
+{
+	font-family: 'Goldman', cursive;
+}
+
+
+</style>
+{% endblock %}
+
+{% block body %}
 {% load static %}
-<h1>Your Profile</h1>
-<div>
-	<label>Name:</label>
-	<p>{{ user.first_name }} {{ user.last_name }}</p>
-	<label>Username:</label>
-	<p>{{ user.username }}</p>
-	<label>Email address:</label>
-	{% if user.email %}
-		<p>{{ user.email }}</p>
-	{% else %}
-		<p>None</p>
-	{% endif %}
+<body onload="typeWriter();">
+
+
+
+
+<header class="text-center">
+	<h1 id="Typer" ></h1>
+
+		<script>
+		var i = 0;
+		var txt = 'Welcome to Helpify!'; /* The text */
+		var speed = 100; /* The speed/duration of the effect in milliseconds */
+
+		function typeWriter() {
+		  if (i < txt.length) {
+		    document.getElementById("Typer").innerHTML += txt.charAt(i);
+		    i++;
+		    setTimeout(typeWriter, speed);
+		  }
+		}	
+		</script>
+</header>
+
+
+<div class="container">
+
+	<div class="row">
+
+		<div class="col-md text-center">
+			<a href='{% url "report" %}'><button class="rounded-circle btn btn-danger text-center emerbutton d-md-none d-lg-none" style="height: 80vw; width: 80vw;"><h3 id="emer">Emergency</h3></button></a>
+		</div>
+		
+	</div>
+
+	<div class="row">
+
+		<div class="col-sm">
+
+			<p>Hello there</p>
+			<p>Part of being a person is about helping others. We at Helpify hope to be a  bridge between you and saving lives. Use our services to help report a mishap that you witness.<br>
+				Head to the help desk to know what to do incase of emergencies. Register now and be a part of the Helpify Family and help save lives.<br><br><strong>Help us prove that "Not all Heroes wear capes".</strong></p>
+			
+		</div>
+		
+	</div>
+
+	<div class="row">
+
+		{% if user.is_authenticated %}
+		<div class="col-sm text-center">
+			<a href='{% url "logout" %}'><button class="btn btn-primary text-center mybutton"><h4>Logout</h4></button></a>
+		</div>
+		{% else %}
+		<div class="col-sm text-center">
+			<a href='{% url "login" %}'><button class="btn btn-primary text-center mybutton"><h4>Login</h4></button></a>
+			<a href='{% url "register" %}'><button class="btn btn-primary text-center mybutton"><h4>Sign Up</h4></button></a>
+		</div>
+		{% endif %}
+	</div>
+	
 </div>
-<div>
-	{% if user.has_usable_password %}
-	<a href="{% url 'edit_profile' %}">Edit Profile</a><br>
-	{% endif %}
-    <a href="{% url 'logout' %}">Logout</a><br>
-</div>
+
+</body>
 {% endblock %}

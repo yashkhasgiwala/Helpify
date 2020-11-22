@@ -7,14 +7,14 @@
 <div>
 	<label>Name:</label>
 	<p>{{ user.first_name }} {{ user.last_name }}</p>
-	<label>Username:</label>
-	<p>{{ user.username }}</p>
 	<label>Email address:</label>
-	{% if user.email %}
 		<p>{{ user.email }}</p>
-	{% else %}
-		<p>None</p>
-	{% endif %}
+	<label>Phone:</label>
+		<p>{{ user.phone }}</p>
+	<label>Registered Vehicle Number:</label>
+		<p>{{ user.reg_plate1 }}</p>
+	<label>Emergency Contact Number:</label>
+		<p>{{ user.contact_phone1 }}</p>
 </div>
 <div>
 	{% if user.has_usable_password %}

@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #34626c;
+  background-color: #222831;
   min-height: 100vh;
   display: flex;
   font-weight: 400;
@@ -11,20 +11,50 @@ body {
 
 body,
 html,
-.App,
 .vue-tempalte,
 .vertical-center {
   width: 100%;
   height: 100%;
 }
 
+h1, h3
+{
+  margin: 10vh;
+  font-family: 'Texturina', serif;
+  
+}
+
+p, label, a, li
+{
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+button
+{
+  font-family: 'Goldman', cursive;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+}
+
+.nav-link .navbar-link {
+  padding-top: .5rem;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .navbar {
   background-color: #222222;
   box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
-  color: #f2dcbb;
 }
 .report-btn {
   background-color: #a20a0a;
+  color: white;
   text-align: center;
   border-radius: 20px;
 }
@@ -44,7 +74,7 @@ h6 {
   margin-left: 2vh;
   margin-right: 2vh;
   align-self: center;
-  background: #f2dcbb;
+  background: white;
   padding: 55px 55px 45px 55px;
   border-radius: 50px;
 }

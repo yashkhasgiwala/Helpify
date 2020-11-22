@@ -1,6 +1,6 @@
 from django.contrib import admin
 from cuser.admin import UserAdmin
-from .models import HUser
+from .models import HUser, Report
 from django.contrib.auth.forms import UserCreationForm
 
 
@@ -12,9 +12,12 @@ class CustomUserAdmin(UserAdmin):
             {
                 'fields': (
                     'phone',
+                    'reg_plate1',
+                    'contact_phone1'
                 ),
             },
         ),
     )
 
 admin.site.register(HUser, CustomUserAdmin)
+admin.site.register(Report)

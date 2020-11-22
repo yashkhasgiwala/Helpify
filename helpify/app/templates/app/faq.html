@@ -1,0 +1,111 @@
+{% extends 'base_menu.html' %}
+
+{% block title %}Help{% endblock %}
+{% load static %}
+{% block content %}
+<div class="container">
+  <h3>Frequently Asked Questions</h3>
+  <div id="accordion">
+    <div class="card">
+      <div class="card-header">
+        <a class="card-link" data-toggle="collapse" href="#collapseOne">
+            General response
+        </a>
+      </div>
+      <div id="collapseOne" class="collapse show" data-parent="#accordion">
+        <div class="card-body">
+            <ul>
+                <li> Make sure there is no panic around the victim. </li>
+                <li>Call Ambulance service immediately(Helpline No. 102)</li>
+                <li>Keep the person warm and avoid giving water or food to the victim as it may lead to choking</li>
+            </ul>
+           </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+            CPR 
+      </a>
+      </div>
+      <div id="collapseTwo" class="collapse" data-parent="#accordion">
+        <div class="card-body"><ul>
+            <li>lay the person on their back and open their airway.</li>
+            <li>Place your ear next to the person’s mouth and listen for no more than 10 seconds. If you do not hear breathing, or you only hear occasional gasps, begin CPR.</li>
+            <li>Place one of your hands on top of the other and clasp them together. With the heel of the hands and straight elbows, push hard and fast in the center of the chest, slightly below the nipples. Push at least 2 inches deep. Compress their chest at a rate of least 100 times per minute. Let the chest rise fully between compressions.</li>
+            <li>Making sure their mouth is clear, tilt their head back slightly, and lift their chin. Pinch their nose shut, place your mouth fully over theirs, and blow to make their chest rise.</li>
+            <li>Repeat until an ambulance or automated external defibrillator (AED) arrives.</li>
+            </ul></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+            Stop Bleeding
+        </a>
+      </div>
+      <div id="collapseThree" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+        <ul>
+            <li>Apply direct pressure on the cut or wound with a clean cloth, tissue, or piece of gauze until bleeding stops.</li>
+                <li>If the wound is on the arm or leg, raise the limb above the heart, if possible, to help slow bleeding.
+                </li>
+        </ul> 
+        </div>
+      </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+          <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour">
+              Limb is Cutoff
+          </a>
+        </div>
+        <div id="collapseFour" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+          <ul>
+              <li>Put it inside a clean polythene bag and place this bag in another bag with cold water. If you can easily get ice put some in the water to keep it cool.</li>
+                <li>If nothing else is available, carry the amputated part in a clean cloth quickly to the hospital.</li>   
+          </ul> 
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed card-link" data-toggle="collapse" href="#collapseFive">
+            If the victim is still in the vehicle
+
+          </a>
+        </div>
+        <div id="collapseFive" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+            Only remove an unconscious person from a vehicle if there is an immediate danger to their life from fire, flood, and explosion. It is very difficult to remove an unconscious person from a vehicle and there is a major danger that you could worsen their injuries and injure yourself in the process.
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed card-link" data-toggle="collapse" href="#collapseSix">
+            What should you do with the vehicle?
+
+
+          </a>
+        </div>
+        <div id="collapseSix" class="collapse" data-parent="#accordion">
+          <div class="card-body"><ul>
+              <li>Note if there is any fuel spillage or potential fire risk – turn off car ignitions if possible.</li>
+            <li> If it’s on fire call the fire brigade immediately.</li>
+            </ul>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
+<br><br><br>
+<table>
+  <tr>
+    <td><img src="{% static 'images/image1.jpeg' %}" height="400vh" width="400vh"></td>
+    <td><img src="{% static 'images/image2.jpeg' %}" height="400vh" width="400vh"></td>
+    <td><img src="{% static 'images/image3.jpeg' %}" height="400vh" width="400vh"></td>
+  </tr>
+</table>
+{% endblock %}
