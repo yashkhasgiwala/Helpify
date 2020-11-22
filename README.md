@@ -3,6 +3,6 @@
 
 To run:
 ```
-`cd helpify`
-`python manage.py runserver`
+cd helpify
+python manage.py runserver
 ```
