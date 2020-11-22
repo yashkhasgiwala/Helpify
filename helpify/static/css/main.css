@@ -9,6 +9,10 @@ body {
   font-weight: 400;
 }
 
+#emer {
+	margin: 0;
+}
+
 body,
 html,
 .vue-tempalte,
